@@ -40,7 +40,6 @@ const getIndex = (num) => {
   } else{
     window.alert('wrong position!');
   }
-  // console.log(count);
   if(count === 9){
     // console.log('no one wins')
     msg.innerText = 'no one wins'
