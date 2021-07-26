@@ -22,7 +22,7 @@ newGame.addEventListener('click', (e) => {
     td.textContent = '';
   })
   playero.innerText = `playerO : ${playerO}`;
-  playerx.innerText = `playerO : ${playerX}`;
+  playerx.innerText = `playerX : ${playerX}`;
   turn = false;
   count = 0;
 })
@@ -42,8 +42,10 @@ const getIndex = (num) => {
   }
   if(count === 9){
     // console.log('no one wins')
-    msg.innerText = 'no one wins'
-    popup.style.display = 'flex';
+    if(popup.style.display !== 'flex') {
+      msg.innerText = 'no one wins'
+      popup.style.display = 'flex';
+    }
     return
   }
 }
