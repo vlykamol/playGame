@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+  <link rel="shortcut icon" href="./favicon-16x16.png
+  " type="image/x-icon">
+  <link rel="stylesheet" href="./style.css">
+  <title>Play Gamez</title>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>tic tac toe</li>
+      <li>game2</li>
+      <li>game3</li>
+      <li>game4</li>
+      <li>game5</li>
+    </ul>
+  </nav>
+  <div class="game-container" id="tic-tac-toe">
+    <div class="playero">playerO : 0</div>
+    <table>
+      <tr>
+        <td onclick="getIndex(1)" id="1"></td>
+        <td onclick="getIndex(2)" id="2"></td>
+        <td onclick="getIndex(3)" id="3"></td>
+      </tr>
+      <tr>
+        <td onclick="getIndex(4)" id="4"></td>
+        <td onclick="getIndex(5)" id="5"></td>
+        <td onclick="getIndex(6)" id="6"></td>
+      </tr>
+      <tr>
+        <td onclick="getIndex(7)" id="7"></td>
+        <td onclick="getIndex(8)" id="8"></td>
+        <td onclick="getIndex(9)" id="9"></td>
+      </tr>
+    </table>
+    <div class="playerx">playerX : 0</div>
+  </div>
+  <div class="popup">
+    <p class="msg">you win</p>
+    <button class="new-game">new game</button>
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
