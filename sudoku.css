@@ -1,0 +1,97 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+nav{
+  background-color: limegreen;
+  height: 10%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.game-container{
+  background: rgb(179, 211, 39);
+  width: 80%;
+  height: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+table{
+  margin: 0;
+  height: 80%;
+  aspect-ratio: 1/1;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+tr, td{
+  height: 10%;
+  width: 10%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 20px;
+}
+
+input{
+  font-size: inherit;
+}
+
+.score, .controls{
+  width: 100%;
+  height: 10%;
+  background: rgb(50, 205, 192);
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup{
+  position: absolute;
+  display: none;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  flex-direction: column;
+  margin: auto;
+  background: crimson;
+  height: 100px;
+  width: 75%;
+  border-radius: 50px;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  
+  font-size: 30px;
+  color: aliceblue;
+  z-index: 10;
+}
+
+.msg{
+  height: auto;
+}
+
+.popup button{
+  height: auto;
+  font-size: 16px;
+  padding: 4px;
+}
+
+.wrong{
+  background: rgba(255, 0, 0, 0.473);
+}
