@@ -34,7 +34,7 @@ table{
   margin: 0;
   height: 80%;
   aspect-ratio: 1/1;
-  border: 1px solid black;
+  border: 3px solid black;
   border-collapse: collapse;
 }
 
@@ -92,6 +92,14 @@ input{
   padding: 4px;
 }
 
-.wrong{
+.row, .coll, .sqr{
   background: rgba(255, 0, 0, 0.473);
+}
+
+#row_3, #row_6{
+  border-bottom: 3px solid black;
+}
+
+.side{
+  border-right: 3px solid black;
 }
