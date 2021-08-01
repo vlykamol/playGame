@@ -206,3 +206,11 @@ const getSqr = (id, num) => {
   }
   return ch(children2, 'sqr');
 }
+
+const newGame = () => {
+  console.log('new game adding');
+}
+
+const resetGame = () => {
+  console.log('reseting game');
+}
