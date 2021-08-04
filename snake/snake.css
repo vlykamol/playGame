@@ -1,0 +1,45 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+nav{
+  background-color: limegreen;
+  height: 10%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.game-container{
+  background: rgb(179, 211, 39);
+  width: 80%;
+  height: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score, .controls{
+  width: 100%;
+  height: 10%;
+  background: rgb(50, 205, 192);
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas{
+  background-color: lavender;
+}

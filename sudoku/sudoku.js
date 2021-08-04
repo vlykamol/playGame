@@ -7,7 +7,9 @@ let turn = false;
 tds.forEach((td) => {
   td.addEventListener('click', (e) => {
     const node = document.getElementById(`${e.target.id}`);
-    e.target.innerText = prompt();
+    const num = prompt()
+    e.target.innerText = num;
+    console.log(typeof(num));
     checkRow(node.parentNode);
     checkColl(node.id);
     checkSqr(node.id);
