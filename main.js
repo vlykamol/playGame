@@ -8,7 +8,6 @@ const newGame = document.querySelector('.new-game');
 const playero = document.querySelector('.playero');
 const playerx = document.querySelector('.playerx');
 
-console.log(playero,playerx);
 
 
 let turn = false;

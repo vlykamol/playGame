@@ -110,3 +110,7 @@ input{
   padding: 5px;
   margin: 10px;
 }
+
+.control_label{
+  height: auto;
+}

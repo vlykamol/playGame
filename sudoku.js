@@ -1,4 +1,5 @@
 
+
 const tds = document.querySelectorAll('td');
 let value = '';
 let turn = false;
@@ -20,18 +21,18 @@ const ifWin = () =>{
   let check3 = false;
   for(let i = 1; i <= 73; i += 9){
     check1 = checkRow(document.getElementById(i).parentNode);
-    console.log(check1);
+    // console.log(check1);
     if(check1 === false) break;
   }
   for(let i = 1; i <= 9; i++){
     check2 = checkColl(i);
-    console.log(check2);
+    // console.log(check2);
     if(check2 === false) break;
   }
   for(let i = 1; i <= 7; i += 3){
     for(let j = i; j <= i + 54; j += 27){
       check3 = checkSqr(j);
-      console.log(check3);
+      // console.log(check3);
       if(check3 === false) break;
     }
   }
@@ -43,7 +44,7 @@ const ifWin = () =>{
 }
 
 const ch = (children2, inn) => {
-  console.log(inn,'-----------');
+  // console.log(inn,'-----------');
   let n1 = 0;
   let n2 = 0;
   let n3 = 0;
@@ -143,15 +144,15 @@ const ch = (children2, inn) => {
 
 const checkRow = (id) => {
   const row = id;
-  console.log('check row', row);
+  // console.log('check row', row);
   const children = [...row.children];
-  console.log(ch(children, 'row'));
+  // console.log(ch(children, 'row'));
   return ch(children, 'row');
 }
 
 const checkColl = (id) => {
   const node = document.getElementById(`${id}`);
-  console.log('check coll', node);
+  // console.log('check coll', node);
   num = id % 9;
   num = num === 0 ? 9 : num;
   children2 = [];
@@ -163,9 +164,10 @@ const checkColl = (id) => {
 }
 
 
+
 const checkSqr = (id) =>{
   const node = document.getElementById(`${id}`);
-  console.log('check sqr', node);
+  // console.log('check sqr', node);
   num = id % 9;
   num = num === 0 ? 9 : num;
 
@@ -207,10 +209,65 @@ const getSqr = (id, num) => {
   return ch(children2, 'sqr');
 }
 
+let request = new XMLHttpRequest();
+
 const newGame = () => {
-  console.log('new game adding');
+  request.open('GET', 'http://localhost:3000/new');
+  request.responseType = Text;
+  request.onload = async () => {
+    globalThis.newSudoku = await JSON.parse(request.response)
+    console.log('get data', newSudoku);
+    resetGame();
+  }
+  request.send();
 }
 
 const resetGame = () => {
-  console.log('reseting game');
+  // console.log(newSudoku);
+  var new_Sudoku = copyArray(newSudoku)
+  const dificulty = document.getElementById('dificulty').value;
+  k = dificulty === 'easy' ? 20 : dificulty === 'meadium' ? 40 : 60;
+  // console.log(k);
+  setDificulty(new_Sudoku, k)
+  // console.log(new_Sudoku);
+  drawSudoku(new_Sudoku);
+}
+
+//seting dificulty, removing k digits randomly
+const setDificulty = (sudoku, k) => {
+  while(k){
+    const randNum = Math.floor(Math.random() * 82)
+    let r = parseInt(randNum/9);
+    r = r === 9 ? r - 1 : r
+    const c = parseInt(randNum%9);
+    if(sudoku[r][c] !== 0){
+      k--
+      sudoku[r][c] = 0;
+    }
+  }
+  // return sudoku
+}
+
+
+const drawSudoku = (sudoku) => {
+  for(let i = 0; i < 9; i++){
+    for(let j = 0; j < 9; j++){
+      const row = document.getElementById(`row_${i+1}`);
+      row.children[j].textContent = sudoku[i][j] === 0 ? '' : `${sudoku[i][j]}`
+      // const num = sudoku[i][j]
+      // console.log(num);
+    }
+  }
+}
+
+const copyArray = (arr) => {
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++){
+    let temp = []
+    for(let j = 0; j < arr[i].length; j++){
+      temp.push(arr[i][j])
+    }
+    newArr.push(temp)
+  }
+  return newArr
 }
