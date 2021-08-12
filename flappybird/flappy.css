@@ -1,0 +1,82 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+nav{
+  background-color: limegreen;
+  height: 10%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.game-container{
+  background: rgb(179, 211, 39);
+  width: 80%;
+  height: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score, .controls{
+  width: 100%;
+  height: 10%;
+  background: rgb(50, 205, 192);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-evenly;
+}
+#score, #highscore{
+  width: auto;
+  height: auto;
+}
+
+canvas{
+  background-color: lavender;
+}
+
+.popup{
+  position: absolute;
+  display: none;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  flex-direction: column;
+  margin: auto;
+  background: crimson;
+  height: auto;
+  width: 50%;
+  border-radius: 50px;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 30px;
+  color: aliceblue;
+  z-index: 10;
+}
+
+.msg{
+  height: auto;
+  padding: 10px;
+}
+
+.popup button{
+  height: auto;
+  font-size: 16px;
+  padding: 4px;
+  margin-bottom: 10px;
+}
